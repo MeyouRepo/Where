@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.meyou.CallBackListener;
 import com.meyou.Dialog;
@@ -31,6 +30,7 @@ import com.meyou.where.Next.Two;
 
 import java.io.File;
 import java.net.HttpURLConnection;
+import java.util.Optional;
 
 import static android.Manifest.permission.CHANGE_WIFI_STATE;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
@@ -89,19 +89,15 @@ public class Home extends Focus implements FunTouchListener {
     private void topRightLoad() {
         for (int i = 1; i <= 7; i++) {
             final int z = i;
-            findViewById(getResources().getIdentifier("tool_" + i, "id", getPackageName())).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    homeLoad(z, true);
-                    clickHide();
-                }
+            findViewById(getResources().getIdentifier("tool_" + i, "id", getPackageName())).setOnClickListener(v -> {
+                homeLoad(z, true);
+                clickHide();
             });
 
             ((TextView) findViewById(getId("t" + i))).setText(getStringArray(R.array.homeScrollViewTopRightLoad)[i - 1]);
             ((ImageView) findViewById(getId("i" + i))).setImageResource(0);
             if (i == getIntShare("HOME_CHECK_LOAD", 1)) {
                 ((ImageView) findViewById(getId("i" + i))).setImageResource(R.drawable.home_check_load_icon);
-                continue;
             }
         }
     }
@@ -170,7 +166,7 @@ public class Home extends Focus implements FunTouchListener {
         else if (isLandScape())
             findViewById(R.id.homeBottom).setVisibility(View.GONE);
 
-        Toast.makeText(this, System.getProperty("os.name") + " " + System.getProperty("os.arch"), Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, System.getProperty("os.name") + " " + System.getProperty("os.arch"), Toast.LENGTH_SHORT).show();
 
     }
 
@@ -184,12 +180,7 @@ public class Home extends Focus implements FunTouchListener {
                 homeLoad(getIntShare(HOME_CHECK_LOAD, 1), false);
                 animation(false);
 
-                delay(800, new Runnable() {
-                    @Override
-                    public void run() {
-                        putShare(NEXT_TO_HOME, false);
-                    }
-                });
+                delay(800, () -> putShare(NEXT_TO_HOME, false));
             } else if (onWindowFocusChanged) {
                 homeLoad(getIntShare(HOME_CHECK_LOAD, 1), true);
                 animation(true);
@@ -201,122 +192,110 @@ public class Home extends Focus implements FunTouchListener {
             }
 
             if (getBooleanShare(UPDATE, false))
-                delay(1000, new Runnable() {
+                delay(1000, () -> get(httpUrl(), Me.hash("Get", "Version"), new CallBackListener() {
+
+                    private String response = "";
+
                     @Override
-                    public void run() {
-                        get(httpUrl(), Me.hash("Get", "Version"), new CallBackListener() {
+                    public void onCallBacking(HttpURLConnection httpURLConnection, byte[] bytes, boolean responseOver) {
+                        if (!responseOver)
+                            response += new String(bytes);
+                        else {
+                            Optional<String> versionName = Optional.ofNullable(getVersionName());
+                            if (versionName.isPresent() && !versionName.get().equals(response)) {
+                                new Dialog(getContext())
+                                        .setHighLightColor(getColor(R.color.colorAccent))
+                                        .setMessage("检查到新版本，是否立即更新？")
+                                        .setLeftButton("是", v -> {
+                                            putShare(UPDATE, false);
+                                            startDownload(downloadUrl(), new DownloadListener() {
+                                                @Override
+                                                public void onDownloading(String fileName, byte[] bytes1, String percentage) {
+                                                    sendNotification(133,
+                                                            NotificationManagerCompat.IMPORTANCE_LOW,
+                                                            null,
+                                                            false,
+                                                            "正在下载安装包",
+                                                            "已下载" + percentage,
+                                                            R.drawable.ic_explore, 0, null, null);
+                                                }
 
-                            private String response = "";
+                                                @Override
+                                                public void onPause(String fileName, String percentage) {
+                                                    getNotificationManager().cancel(133);
+                                                    sendNotification(134,
+                                                            NotificationManagerCompat.IMPORTANCE_LOW,
+                                                            null,
+                                                            false,
+                                                            "下载中断",
+                                                            "已下载" + percentage,
+                                                            R.drawable.ic_explore, 0, null, null);
+                                                }
 
-                            @Override
-                            public void onCallBacking(HttpURLConnection httpURLConnection, byte[] bytes, boolean responseOver) {
-                                if (!responseOver)
-                                    response += new String(bytes);
-                                else {
-                                    if (!getVersionName().equals(response)) {
-                                        new Dialog(getContext())
-                                                .setHighLightColor(getColor(R.color.colorAccent))
-                                                .setMessage("检查到新版本，是否立即更新？")
-                                                .setLeftButton("是", new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        putShare(UPDATE, false);
-                                                        startDownload(downloadUrl(), new DownloadListener() {
-                                                            @Override
-                                                            public void onDownloading(String fileName, byte[] bytes, String percentage) {
-                                                                sendNotification(133,
-                                                                        NotificationManagerCompat.IMPORTANCE_LOW,
-                                                                        null,
-                                                                        false,
-                                                                        "正在下载安装包",
-                                                                        "已下载" + percentage,
-                                                                        R.drawable.ic_explore, 0, null, null);
-                                                            }
+                                                @Override
+                                                public void onError(String fileName, String percentage) {
+                                                    getNotificationManager().cancel(133);
+                                                    sendNotification(134,
+                                                            NotificationManagerCompat.IMPORTANCE_LOW,
+                                                            null,
+                                                            false,
+                                                            "下载出错",
+                                                            "可能服务器上不存在该文件",
+                                                            R.drawable.ic_explore, 0, null, null);
+                                                }
 
-                                                            @Override
-                                                            public void onPause(String fileName, String percentage) {
-                                                                getNotificationManager().cancel(133);
-                                                                sendNotification(134,
-                                                                        NotificationManagerCompat.IMPORTANCE_LOW,
-                                                                        null,
-                                                                        false,
-                                                                        "下载中断",
-                                                                        "已下载" + percentage,
-                                                                        R.drawable.ic_explore, 0, null, null);
-                                                            }
+                                                @Override
+                                                public void onFinish(File file, String fileName) {
 
-                                                            @Override
-                                                            public void onError(String fileName, String percentage) {
-                                                                getNotificationManager().cancel(133);
-                                                                sendNotification(134,
-                                                                        NotificationManagerCompat.IMPORTANCE_LOW,
-                                                                        null,
-                                                                        false,
-                                                                        "下载出错",
-                                                                        "可能服务器上不存在该文件",
-                                                                        R.drawable.ic_explore, 0, null, null);
-                                                            }
+                                                    getNotificationManager().cancel(133);
 
-                                                            @Override
-                                                            public void onFinish(File file, String fileName) {
+                                                    Uri uri;
 
-                                                                getNotificationManager().cancel(133);
-
-                                                                Uri uri;
-
-                                                                if (SDK_INT >= N)
-                                                                    uri = getUriForFile(getPackageName() + "." + proName(), file);
-                                                                else
-                                                                    uri = Uri.fromFile(file);
+                                                    if (SDK_INT >= N)
+                                                        uri = getUriForFile(getPackageName() + "." + proName(), file);
+                                                    else
+                                                        uri = Uri.fromFile(file);
 
 
-                                                                sendNotification(134,
-                                                                        NotificationManagerCompat.IMPORTANCE_HIGH,
-                                                                        null,
-                                                                        true,
-                                                                        "下载" + fileName + "完成",
-                                                                        "点我安装",
-                                                                        R.drawable.ic_explore, 0, null,
-                                                                        PendingIntent.getActivity(getContext(), 0, Me.getInstall(uri), 0));
-                                                            }
+                                                    sendNotification(134,
+                                                            NotificationManagerCompat.IMPORTANCE_HIGH,
+                                                            null,
+                                                            true,
+                                                            "下载" + fileName + "完成",
+                                                            "点我安装",
+                                                            R.drawable.ic_explore, 0, null,
+                                                            PendingIntent.getActivity(getContext(), 0, Me.getInstall(uri), PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE));
+                                                }
 
-                                                            @Override
-                                                            public void noNetWork() {
-                                                                getNotificationManager().cancel(133);
-                                                                sendNotification(134,
-                                                                        NotificationManagerCompat.IMPORTANCE_LOW,
-                                                                        null,
-                                                                        false,
-                                                                        "...",
-                                                                        "没有网络无法下载",
-                                                                        R.drawable.ic_explore, 0, null, null);
-                                                            }
-                                                        });
-                                                    }
-                                                })
-                                                .setRightButton("否", new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View v) {
-                                                        putShare(UPDATE, false);
-                                                    }
-                                                })
-                                                .show();
-                                    }
-                                }
+                                                @Override
+                                                public void noNetWork() {
+                                                    getNotificationManager().cancel(133);
+                                                    sendNotification(134,
+                                                            NotificationManagerCompat.IMPORTANCE_LOW,
+                                                            null,
+                                                            false,
+                                                            "...",
+                                                            "没有网络无法下载",
+                                                            R.drawable.ic_explore, 0, null, null);
+                                                }
+                                            });
+                                        })
+                                        .setRightButton("否", v -> putShare(UPDATE, false))
+                                        .show();
                             }
-
-                            @Override
-                            public void onError() {
-                                toast("联网检查更新出错");
-                            }
-
-                            @Override
-                            public void noNetWork() {
-                                toast("没有网络，无法检查更新");
-                            }
-                        });
+                        }
                     }
-                });
+
+                    @Override
+                    public void onError() {
+                        toast("联网检查更新出错");
+                    }
+
+                    @Override
+                    public void noNetWork() {
+                        toast("没有网络，无法检查更新");
+                    }
+                }));
 
         }
 
@@ -337,6 +316,7 @@ public class Home extends Focus implements FunTouchListener {
     }
 
 
+    @SuppressWarnings("unused")
     public void homeListToolBarClick(final View v) {
 
 
@@ -348,7 +328,6 @@ public class Home extends Focus implements FunTouchListener {
                         .putExtra(One.class.getSimpleName(), (i + 1))
                         .putExtra(HOME_TO_NEXT_TITLE, ((TextView) findViewById(getId("homeToNextTitle_A" + (i + 1)))).getText()));
                 overridePendingTransition(R.anim.next_activity_in, R.anim.home_to_next_hide);
-                continue;
             }
 
         }
@@ -361,7 +340,6 @@ public class Home extends Focus implements FunTouchListener {
                         .putExtra(Two.class.getSimpleName(), (i + 1))
                         .putExtra(HOME_TO_NEXT_TITLE, ((TextView) findViewById(getId("homeToNextTitle_B" + (i + 1)))).getText()));
                 overridePendingTransition(R.anim.next_activity_in, R.anim.home_to_next_hide);
-                continue;
             }
 
         }
@@ -374,7 +352,6 @@ public class Home extends Focus implements FunTouchListener {
                         .putExtra(Three.class.getSimpleName(), (i + 1))
                         .putExtra(HOME_TO_NEXT_TITLE, ((TextView) findViewById(getId("homeToNextTitle_C" + (i + 1)))).getText()));
                 overridePendingTransition(R.anim.next_activity_in, R.anim.home_to_next_hide);
-                continue;
             }
 
         }
@@ -387,7 +364,6 @@ public class Home extends Focus implements FunTouchListener {
                         .putExtra(Four.class.getSimpleName(), (i + 1))
                         .putExtra(HOME_TO_NEXT_TITLE, ((TextView) findViewById(getId("homeToNextTitle_D" + (i + 1)))).getText()));
                 overridePendingTransition(R.anim.next_activity_in, R.anim.home_to_next_hide);
-                continue;
             }
 
         }
@@ -400,7 +376,6 @@ public class Home extends Focus implements FunTouchListener {
                         .putExtra(Five.class.getSimpleName(), (i + 1))
                         .putExtra(HOME_TO_NEXT_TITLE, ((TextView) findViewById(getId("homeToNextTitle_E" + (i + 1)))).getText()));
                 overridePendingTransition(R.anim.next_activity_in, R.anim.home_to_next_hide);
-                continue;
             }
 
 
@@ -414,7 +389,6 @@ public class Home extends Focus implements FunTouchListener {
                         .putExtra(Six.class.getSimpleName(), (i + 1))
                         .putExtra(HOME_TO_NEXT_TITLE, ((TextView) findViewById(getId("homeToNextTitle_F" + (i + 1)))).getText()));
                 overridePendingTransition(R.anim.next_activity_in, R.anim.home_to_next_hide);
-                continue;
             }
 
 
@@ -428,7 +402,6 @@ public class Home extends Focus implements FunTouchListener {
                         .putExtra(Seven.class.getSimpleName(), (i + 1))
                         .putExtra(HOME_TO_NEXT_TITLE, ((TextView) findViewById(getId("homeToNextTitle_G" + (i + 1)))).getText()));
                 overridePendingTransition(R.anim.next_activity_in, R.anim.home_to_next_hide);
-                continue;
             }
         }
 
@@ -463,12 +436,7 @@ public class Home extends Focus implements FunTouchListener {
         findViewById(R.id.homeTopRightScrollShow).startAnimation(loadAnimation(R.anim.button_click_scrollview_show));
 
 
-        findViewById(R.id.homeSeeRe).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickHide();
-            }
-        });
+        findViewById(R.id.homeSeeRe).setOnClickListener(v1 -> clickHide());
 
 
         topRightLoad();
