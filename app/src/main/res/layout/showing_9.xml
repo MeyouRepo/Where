@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
-
 
 
     <Switch
@@ -32,6 +31,6 @@
     <TextView
         android:id="@+id/TextView_On_Toggle_Switch_Example"
         android:text="上面的方块也是可以点击的哦"
-        style="@style/showingTipTextStyle"/>
+        style="@style/showingTipTextStyle" />
 
 </RelativeLayout>

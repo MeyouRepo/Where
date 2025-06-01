@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
@@ -26,13 +26,12 @@
         <Button
             android:id="@+id/Button_A_On_ChangeWIFIStateExample"
             android:text="Open WIFI"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
         <Button
             android:id="@+id/Button_B_On_ChangeWIFIStateExample"
             android:text="Close WIFI"
-            style="@style/showingMoreTouchStyle"/>
-
+            style="@style/showingMoreTouchStyle" />
 
 
     </LinearLayout>

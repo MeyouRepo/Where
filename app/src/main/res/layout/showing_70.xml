@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
@@ -28,7 +28,7 @@
                 android:paddingLeft="10dp"
                 android:textSize="22dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/TextView_Right_On_XMLParsingExample"
@@ -38,7 +38,7 @@
                 android:paddingLeft="10dp"
                 android:textSize="22dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -47,6 +47,6 @@
     <Button
         android:id="@+id/Button_On_XMLParsingExample"
         android:text="Parse"
-        style="@style/showingOneTouchStyle"/>
+        style="@style/showingOneTouchStyle" />
 
 </RelativeLayout>

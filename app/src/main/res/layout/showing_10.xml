@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
@@ -14,6 +14,6 @@
     <TextView
         android:id="@+id/text_on_spinner"
         android:text="Spinner用于从一串列表中选择某项"
-        style="@style/showingTipTextStyle"/>
+        style="@style/showingTipTextStyle" />
 
 </RelativeLayout>

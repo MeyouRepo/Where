@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
@@ -17,15 +17,13 @@
         android:textSize="36dp"
         android:hint="请输入一个参数传递到Activity B"
         android:textColorHint="@android:color/white"
-        android:layout_height="120dp"/>
+        android:layout_height="120dp" />
 
 
     <Button
         android:id="@+id/Button_On_PassingValueExample"
         android:text="Goto Activity B"
-        style="@style/showingOneTouchStyle"/>
-
-
+        style="@style/showingOneTouchStyle" />
 
 
 </RelativeLayout>

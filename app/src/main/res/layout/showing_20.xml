@@ -17,6 +17,6 @@
 
     <TextView
         android:text="Chronometer可以用来与时间赛跑"
-        style="@style/showingTipTextStyle"/>
+        style="@style/showingTipTextStyle" />
 
 </RelativeLayout>

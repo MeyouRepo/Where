@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
@@ -9,6 +9,6 @@
         android:textSize="24dp"
         android:layout_marginLeft="30dp"
         android:padding="8dp"
-        android:id="@+id/TextViewChild_On_ExpandableListViewExample"/>
+        android:id="@+id/TextViewChild_On_ExpandableListViewExample" />
 
 </RelativeLayout>

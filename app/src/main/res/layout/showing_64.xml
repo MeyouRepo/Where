@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
@@ -17,7 +17,8 @@
         android:layout_width="240dp"
         android:paddingLeft="15dp"
         android:layout_height="wrap_content">
-        <requestFocus/>
+
+        <requestFocus />
     </EditText>
 
     <LinearLayout
@@ -36,7 +37,7 @@
         <Button
             android:id="@+id/Button_Right_On_SharedPreferenceExample"
             android:text="READ"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
     </LinearLayout>
 

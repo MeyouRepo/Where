@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
@@ -14,7 +14,7 @@
         android:layout_marginTop="80dp"
         android:textSize="50dp"
         android:text="This is Activity A"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 
     <LinearLayout
@@ -26,14 +26,13 @@
         <Button
             android:id="@+id/Button_A_On_ActivityTransition"
             android:text="显式Intent"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
         <Button
             android:id="@+id/Button_B_On_ActivityTransition"
             android:text="隐式Intent"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
     </LinearLayout>
-
 
 
 </RelativeLayout>

@@ -18,6 +18,6 @@
 
     <TextView
         android:text="Button可以用来响应点击和长按事件"
-        style="@style/showingTipTextStyle"/>
+        style="@style/showingTipTextStyle" />
 
 </RelativeLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
@@ -22,24 +22,24 @@
         <Button
             android:id="@+id/Button_Left_On_SlideAnimationExample"
             android:text="Slide Left"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
 
         <Button
             android:id="@+id/Button_Up_On_SlideAnimationExample"
             android:text="Slide Up"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
 
         <Button
             android:id="@+id/Button_Right_On_SlideAnimationExample"
             android:text="Slide Right"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
         <Button
             android:id="@+id/Button_Down_On_SlideAnimationExample"
             android:text="Slide Down"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
     </LinearLayout>
 

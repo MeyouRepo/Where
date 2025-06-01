@@ -1,5 +1,5 @@
 <resources>
-    <string name="appName">Where</string>
+    <string name="app_name">Where</string>
 
     <string-array name="homeScrollViewTopRightLoad">
         <item>初级窗口部件</item>
@@ -194,6 +194,4 @@
         <item>SnackBar</item>
         <item>Toast</item>
     </string-array>-->
-
-
 </resources>

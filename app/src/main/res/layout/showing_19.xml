@@ -16,6 +16,6 @@
 
     <TextView
         android:text="TextClock可以用来显示当前时间"
-        style="@style/showingTipTextStyle"/>
+        style="@style/showingTipTextStyle" />
 
 </RelativeLayout>

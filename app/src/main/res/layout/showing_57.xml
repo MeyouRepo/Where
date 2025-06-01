@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/showing_include" />
@@ -23,24 +23,24 @@
         <Button
             android:id="@+id/Button_Left_On_TranslateAnimationExample"
             android:text="Translate Left"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
 
         <Button
             android:id="@+id/Button_Up_On_TranslateAnimationExample"
             android:text="Translate Up"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
 
         <Button
             android:id="@+id/Button_Right_On_TranslateAnimationExample"
             android:text="Translate Right"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
         <Button
             android:id="@+id/Button_Down_On_TranslateAnimationExample"
             android:text="Translate Down"
-            style="@style/showingMoreTouchStyle"/>
+            style="@style/showingMoreTouchStyle" />
 
     </LinearLayout>
 

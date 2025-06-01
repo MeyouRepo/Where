@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Example.PassingValueExample2">
 
-    <include layout="@layout/showing_include"/>
+    <include layout="@layout/showing_include" />
 
     <TextView
         android:id="@+id/TextView_On_PassingValueExample"
@@ -15,12 +15,12 @@
         android:layout_width="wrap_content"
         android:textSize="50dp"
         android:text="This is Activity B"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 
     <Button
         android:id="@+id/Button_Goto_On_PassingValueExample"
         android:text="Goto Activity A"
-        style="@style/showingOneTouchStyle"/>
+        style="@style/showingOneTouchStyle" />
 
 </RelativeLayout>

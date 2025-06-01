@@ -1,5 +1,8 @@
 package com.meyou.where;
 
+import static com.meyou.where.What.NEXT_TO_HOME;
+
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -7,171 +10,162 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-
 import com.meyou.Focus;
 import com.meyou.FunTouchListener;
 import com.meyou.Me;
 
-import static com.meyou.where.What.NEXT_TO_HOME;
-
 public abstract class Common extends Focus {
 
+  protected static final int COLOR_GRAY_TOUCH_DOWN = Color.rgb(235, 235, 235);
 
-    protected final static int COLOR_GRAY_TOUCH_DOWN = Color.rgb(235, 235, 235);
+  protected static final int BAC_GRAY_COLOR = Me.getGray(233);
 
-    protected final static int BAC_GRAY_COLOR = Me.getGray(233);
+  private int radius;
 
-    private int radius;
+  public static final String SHOW_CODE_PASSING = "SHOW_CODE_PASSING";
+  public static final String PROPERTY = "PROPERTY";
+  public static final String PROPERTY_TITLE = "PROPERTY_TITLE";
 
-    public final static String SHOW_CODE_PASSING = "SHOW_CODE_PASSING";
-    public final static String PROPERTY = "PROPERTY";
-    public final static String PROPERTY_TITLE = "PROPERTY_TITLE";
+  protected final int getRadius() {
+    return radius;
+  }
 
-    protected final int getRadius() {
-        return radius;
-    }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    radius = 20;
+  }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        radius = 20;
-    }
+  @Override
+  protected void onUIState() {
+    setWindowDrawable(R.drawable.next_window_drawable);
+    layoutInSystemBars();
+    hideSystemBars();
+  }
 
+  protected final int getLoadValue() {
+    return getIntent().getIntExtra(SHOW_CODE_PASSING, 0);
+  }
 
-    @Override
-    protected void onUIState() {
-        setWindowDrawable(R.drawable.next_window_drawable);
-        layoutInSystemBars();
-        hideSystemBars();
-    }
+  protected final String getPropertyTitle() {
+    return getIntent().getStringExtra(PROPERTY_TITLE);
+  }
 
+  protected final int getLoadColor() {
+    Bitmap bitmap =
+        BitmapFactory.decodeResource(getResources(), getDrawableId("zzz_" + getLoadValue()));
 
-    protected final int getLoadValue() {
-        return getIntent().getIntExtra(SHOW_CODE_PASSING, 0);
-    }
+    final int color = bitmap.getPixel(95, 95);
 
-    protected final String getPropertyTitle() {
-        return getIntent().getStringExtra(PROPERTY_TITLE);
-    }
+    return Color.rgb(Color.red(color), Color.green(color), Color.blue(color));
+  }
 
-    protected final int getLoadColor() {
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), getDrawableId("zzz_" + getLoadValue()));
+  protected final void moreTouch(int leftId, int rightId) {
 
-        final int color = bitmap.getPixel(95, 95);
+    Button left = findViewById(leftId);
+    Button right = findViewById(rightId);
 
-        return Color.rgb(Color.red(color), Color.green(color), Color.blue(color));
+    left.setBackgroundColor(getLoadColor());
+    left.setTextColor(Color.WHITE);
 
-    }
+    right.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
+    right.setTextColor(Color.BLACK);
 
+    funTouch(
+        left,
+        new FunTouchListener() {
+          @Override
+          public void onActionDown(View v, MotionEvent event) {
+            v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
+            ((Button) v).setTextColor(Color.BLACK);
+          }
 
-    protected final void moreTouch(int leftId, int rightId) {
+          @Override
+          public void onActionUp(View v, MotionEvent event) {
+            v.setBackgroundColor(getLoadColor());
+            ((Button) v).setTextColor(Color.WHITE);
+          }
 
-        Button left = findViewById(leftId);
-        Button right = findViewById(rightId);
-
-
-        left.setBackgroundColor(getLoadColor());
-        left.setTextColor(Color.WHITE);
-
-        right.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
-        right.setTextColor(Color.BLACK);
-
-        funTouch(left, new FunTouchListener() {
-            @Override
-            public void onActionDown(View v, MotionEvent event) {
-                v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
-                ((Button) v).setTextColor(Color.BLACK);
-            }
-
-            @Override
-            public void onActionUp(View v, MotionEvent event) {
-                v.setBackgroundColor(getLoadColor());
-                ((Button) v).setTextColor(Color.WHITE);
-            }
-
-            @Override
-            public void onClick(View v) {
-                Common.this.onClick(v);
-            }
+          @Override
+          public void onClick(View v) {
+            Common.this.onClick(v);
+          }
         });
 
-        funTouch(right, new FunTouchListener() {
-            @Override
-            public void onActionDown(View v, MotionEvent event) {
-                v.setBackgroundColor(getLoadColor());
-                ((Button) v).setTextColor(Color.WHITE);
-            }
+    funTouch(
+        right,
+        new FunTouchListener() {
+          @Override
+          public void onActionDown(View v, MotionEvent event) {
+            v.setBackgroundColor(getLoadColor());
+            ((Button) v).setTextColor(Color.WHITE);
+          }
 
-            @Override
-            public void onActionUp(View v, MotionEvent event) {
-                v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
-                ((Button) v).setTextColor(Color.BLACK);
-            }
+          @Override
+          public void onActionUp(View v, MotionEvent event) {
+            v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
+            ((Button) v).setTextColor(Color.BLACK);
+          }
 
-            @Override
-            public void onClick(View v) {
-                Common.this.onClick(v);
-            }
+          @Override
+          public void onClick(View v) {
+            Common.this.onClick(v);
+          }
         });
+  }
 
-    }
+  protected final void oneTouch(int buttonId) {
 
-    protected final void oneTouch(int buttonId) {
+    final Button button = findViewById(buttonId);
 
-        final Button button = findViewById(buttonId);
+    button.setBackgroundColor(getLoadColor());
+    button.setTextColor(Color.WHITE);
+    setViewRadius(12, button);
 
-        button.setBackgroundColor(getLoadColor());
-        button.setTextColor(Color.WHITE);
-        setViewRadius(12, button);
+    funTouch(
+        button,
+        new FunTouchListener() {
+          @Override
+          public void onActionDown(View v, MotionEvent event) {
+            v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
+            ((Button) v).setTextColor(Color.BLACK);
+          }
 
-        funTouch(button, new FunTouchListener() {
-            @Override
-            public void onActionDown(View v, MotionEvent event) {
-                v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
-                ((Button) v).setTextColor(Color.BLACK);
-            }
+          @Override
+          public void onActionUp(View v, MotionEvent event) {
+            v.setBackgroundColor(getLoadColor());
+            ((Button) v).setTextColor(Color.WHITE);
+          }
 
-            @Override
-            public void onActionUp(View v, MotionEvent event) {
-                v.setBackgroundColor(getLoadColor());
-                ((Button) v).setTextColor(Color.WHITE);
-            }
-
-            @Override
-            public void onClick(View v) {
-                Common.this.onClick(v);
-            }
+          @Override
+          public void onClick(View v) {
+            Common.this.onClick(v);
+          }
         });
+  }
+
+  public abstract void onClick(View view);
+
+  public final void showingRgbClick(View v) {
+    int viewId = v.getId();
+    if (viewId == R.id.codeBack) {
+      onBackPressed();
+    } else if (viewId == R.id.codeToProperty) {
+      startActivity(
+          getIntent(More.class)
+              .putExtra(PROPERTY, getLoadValue())
+              .putExtra(PROPERTY_TITLE, getPropertyTitle()));
+      overridePendingTransition(R.anim.next_yan, R.anim.next_to_code);
+    } else if (viewId == R.id.codeToHome) {
+      putShare(NEXT_TO_HOME, true);
+      startActivity(Home.class, R.anim.where_home_show, R.anim.where_to_home);
     }
+  }
 
-
-    public abstract void onClick(View view);
-
-
-    public final void showingRgbClick(View v) {
-        switch (v.getId()) {
-            case R.id.codeBack:
-                onBackPressed();
-                break;
-            case R.id.codeToProperty:
-                startActivity(getIntent(More.class).
-                        putExtra(PROPERTY, getLoadValue()).
-                        putExtra(PROPERTY_TITLE, getPropertyTitle()));
-                overridePendingTransition(R.anim.next_yan, R.anim.next_to_code);
-                break;
-            case R.id.codeToHome:
-                putShare(NEXT_TO_HOME, true);
-                startActivity(Home.class, R.anim.where_home_show, R.anim.where_to_home);
-            default:
-                break;
-        }
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish(R.anim.next_show, R.anim.yan_to_next);
-    }
-
+  @SuppressLint("GestureBackNavigation")
+  @Override
+  public void onBackPressed() {
+    super.onBackPressed();
+    finish(R.anim.next_show, R.anim.yan_to_next);
+  }
 }

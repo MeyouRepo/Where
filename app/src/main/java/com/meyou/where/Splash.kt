@@ -33,20 +33,25 @@ class Splash : Focus() {
         binding.splashText.startAnimation(loadAnimation(R.anim.splash_text_hide))
 
         if (SDK_INT >= O)
-            setShortCuts(ShortcutInfo.Builder(applicationContext, "TWO")
+            setShortCuts(
+                ShortcutInfo.Builder(applicationContext, "TWO")
                     .setIcon(Icon.createWithResource(applicationContext, R.drawable.short_home))
                     .setLongLabel("主界面")
                     .setShortLabel("主界面")
                     .setIntent(getIntent(Splash::class.java).setAction(Intent.ACTION_VIEW))
                     .setRank(2)
                     .build(),
-                    ShortcutInfo.Builder(applicationContext, "ONE")
-                            .setIcon(Icon.createWithResource(applicationContext, R.drawable.short_code))
-                            .setLongLabel("Hello World")
-                            .setShortLabel("Hello World")
-                            .setIntent(getIntent(Show::class.java).setAction(Intent.ACTION_VIEW).putExtra(SHOW_CODE_PASSING, 1))
-                            .setRank(1)
-                            .build())
+                ShortcutInfo.Builder(applicationContext, "ONE")
+                    .setIcon(Icon.createWithResource(applicationContext, R.drawable.short_code))
+                    .setLongLabel("Hello World")
+                    .setShortLabel("Hello World")
+                    .setIntent(
+                        getIntent(Show::class.java).setAction(Intent.ACTION_VIEW)
+                            .putExtra(SHOW_CODE_PASSING, 1)
+                    )
+                    .setRank(1)
+                    .build()
+            )
 
         delay(1500) {
             startActivity(Home::class.java)
