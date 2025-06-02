@@ -998,7 +998,7 @@ public class Three extends What {
                 + "     android:textColor=\"#78909c\"\n"
                 + "     android:textSize=\"38dp\" />\n"
                 + "\n"
-                + "  <android.support.design.widget.NavigationView\n"
+                + "  <com.google.android.material.navigation.NavigationView\n"
                 + "   android:layout_height=\"match_parent\"\n"
                 + "      android:layout_gravity=\"start\"\n"
                 + "      app:headerLayout=\"@layout/header_navi\"\n"

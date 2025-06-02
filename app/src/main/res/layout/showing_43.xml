@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
 
     <androidx.drawerlayout.widget.DrawerLayout
@@ -19,13 +19,13 @@
             android:text="左滑屏幕边缘以显示NavigationView"
             android:textSize="40dp" />
 
-        <android.support.design.widget.NavigationView
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="380dp"
             android:layout_height="match_parent"
-            android:background="@android:color/white"
             android:layout_gravity="start"
+            android:background="@android:color/white"
             app:headerLayout="@layout/header_navigation"
-            app:menu="@menu/bottom_navigation"
-            android:layout_width="380dp" />
+            app:menu="@menu/bottom_navigation" />
 
     </androidx.drawerlayout.widget.DrawerLayout>
 
