@@ -13,8 +13,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_g1"
-            style="@style/homeListToolBar"
-            android:layout_marginTop="@dimen/homeTopToolBarHeight">
+            style="@style/homeListToolBar">
 
             <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
