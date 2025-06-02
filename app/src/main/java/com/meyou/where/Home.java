@@ -17,7 +17,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -112,6 +114,7 @@ public class Home extends Focus implements FunTouchListener {
     }
   }
 
+  @SuppressLint("NewApi")
   private void homeLoad(final int checkLoad, final boolean checkAnimation) {
     putShare("HOME_CHECK_LOAD", checkLoad);
 
@@ -123,19 +126,34 @@ public class Home extends Focus implements FunTouchListener {
     ((TextView) findViewById(R.id.homeTopRightToolBarTextView))
         .setText(getStringArray(R.array.homeScrollViewTopRightLoad)[checkLoad - 1]);
 
-    for (int i = 1; i <= 7; i++) findViewById(getId("scrollView_" + i)).setVisibility(View.GONE);
-
-    if (checkAnimation) {
-      findViewById(getId("scrollView_" + checkLoad))
-          .startAnimation(loadAnimation(R.anim.home_scrollview_show));
+    for (int i = 1; i <= 7; i++) {
+      ScrollView scrollView = findViewById(getId("scrollView_" + i));
+      scrollView.setVisibility(View.GONE);
     }
 
-    if (!getBooleanShare(NEXT_TO_HOME, true))
-      ((ScrollView) findViewById(getId("scrollView_" + checkLoad))).smoothScrollTo(0, 0);
+    ScrollView scrollViewCheckLoad = findViewById(getId("scrollView_" + checkLoad));
+    View scrollViewCheckLoadChild0 = scrollViewCheckLoad.getChildAt(0);
+    Optional.ofNullable(scrollViewCheckLoadChild0)
+        .ifPresent(
+            view -> {
+              FrameLayout.LayoutParams layoutParams =
+                  (FrameLayout.LayoutParams) view.getLayoutParams();
+              View homeTopToolbar = getDecorView().findViewById(R.id.home_top_toolbar);
+              int homeTopToolbarHeight = homeTopToolbar.getMeasuredHeight();
+              layoutParams.setMargins(0, homeTopToolbarHeight, 0, 0);
+              view.setLayoutParams(layoutParams);
+            });
 
-    findViewById(getId("scrollView_" + checkLoad)).setVisibility(View.VISIBLE);
+    if (checkAnimation) {
+      scrollViewCheckLoad.startAnimation(loadAnimation(R.anim.home_scrollview_show));
+    }
+
+    if (!getBooleanShare(NEXT_TO_HOME, true)) scrollViewCheckLoad.smoothScrollTo(0, 0);
+
+    scrollViewCheckLoad.setVisibility(View.VISIBLE);
   }
 
+  @SuppressLint("NewApi")
   private void runIn() {
     if (onWindowFocusChanged && !getBooleanShare(NEXT_TO_HOME, false)) {
       homeLoad(getIntShare("HOME_CHECK_LOAD", 1), true);
@@ -172,10 +190,8 @@ public class Home extends Focus implements FunTouchListener {
   @Override
   protected void onUIState() {
     super.onUIState();
-
     Toolbar homeBottom = findViewById(R.id.homeBottom);
-    RelativeLayout.LayoutParams homeBottomLayoutParams =
-        (RelativeLayout.LayoutParams) homeBottom.getLayoutParams();
+    ViewGroup.LayoutParams homeBottomLayoutParams = homeBottom.getLayoutParams();
     homeBottomLayoutParams.height = getNavigationBarHeight();
     if (isPortrait()) homeBottom.setVisibility(View.VISIBLE);
     else if (isLandScape()) homeBottom.setVisibility(View.GONE);
@@ -481,7 +497,7 @@ public class Home extends Focus implements FunTouchListener {
         .startAnimation(loadAnimation(R.anim.home_top_toolbar_right_move_right));
     findViewById(R.id.homeTopToolBarRight).setVisibility(View.GONE);
 
-    ((RelativeLayout) findViewById(R.id.home_main_layout))
+    ((ViewGroup) findViewById(R.id.home_main_layout))
         .addView(inflate(R.layout.home_top_right_scrollview_show_layout, null));
 
     findViewById(R.id.homeSeeRe).setVisibility(View.VISIBLE);

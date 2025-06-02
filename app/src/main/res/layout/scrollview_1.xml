@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView_1"
     style="@style/homeMainScrollview">
 
-
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_a1"
-            android:layout_marginTop="@dimen/homeTopToolBarHeight"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 app:srcCompat="@drawable/zzz_1" />
 
@@ -41,7 +39,7 @@
             android:id="@+id/tool_a2"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 app:srcCompat="@drawable/zzz_2" />
 
@@ -49,12 +47,14 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="文本编辑框" />
+                    android:text="文本编辑框"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A2"
                     style="@style/homeListToolBarSmallText"
-                    android:text="EditText" />
+                    android:text="EditText"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <Button
@@ -66,7 +66,7 @@
             android:id="@+id/tool_a3"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_3" />
 
@@ -74,12 +74,14 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="按钮控件" />
+                    android:text="按钮控件"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A3"
                     style="@style/homeListToolBarSmallText"
-                    android:text="Button" />
+                    android:text="Button"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <Button
@@ -91,7 +93,7 @@
             android:id="@+id/tool_a4"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_4" />
 
@@ -99,12 +101,14 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="单选按钮" />
+                    android:text="单选按钮"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A4"
                     style="@style/homeListToolBarSmallText"
-                    android:text="RadioButton" />
+                    android:text="RadioButton"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <Button
@@ -116,7 +120,7 @@
             android:id="@+id/tool_a5"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_5" />
 
@@ -124,12 +128,14 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="复选框" />
+                    android:text="复选框"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A5"
                     style="@style/homeListToolBarSmallText"
-                    android:text="CheckBox" />
+                    android:text="CheckBox"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <Button
@@ -141,7 +147,7 @@
             android:id="@+id/tool_a6"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_6" />
 
@@ -149,12 +155,14 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="评分条" />
+                    android:text="评分条"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A6"
                     style="@style/homeListToolBarSmallText"
-                    android:text="RatingBar" />
+                    android:text="RatingBar"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <Button
@@ -166,7 +174,7 @@
             android:id="@+id/tool_a7"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_7" />
 
@@ -174,12 +182,14 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="拖动条" />
+                    android:text="拖动条"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A7"
                     style="@style/homeListToolBarSmallText"
-                    android:text="SeekBar" />
+                    android:text="SeekBar"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <Button
@@ -191,7 +201,7 @@
             android:id="@+id/tool_a8"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_8" />
 
@@ -199,12 +209,14 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="进度条" />
+                    android:text="进度条"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A8"
                     style="@style/homeListToolBarSmallText"
-                    android:text="ProgressBar" />
+                    android:text="ProgressBar"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <Button
@@ -216,7 +228,7 @@
             android:id="@+id/tool_a9"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_9" />
 
@@ -224,12 +236,14 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="开关按钮" />
+                    android:text="开关按钮"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A9"
                     style="@style/homeListToolBarSmallText"
-                    android:text="ToggleButton/Switch" />
+                    android:text="ToggleButton/Switch"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <Button
@@ -241,7 +255,7 @@
             android:id="@+id/tool_a10"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_10" />
 
@@ -249,7 +263,8 @@
 
                 <TextView
                     style="@style/homeListToolBarBigText"
-                    android:text="下拉框" />
+                    android:text="下拉框"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/homeToNextTitle_A10"
@@ -266,7 +281,7 @@
             android:id="@+id/tool_a11"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_11" />
 
@@ -291,7 +306,7 @@
             android:id="@+id/tool_a12"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_12" />
 
@@ -316,7 +331,7 @@
             android:id="@+id/tool_a13"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_13" />
 
@@ -341,7 +356,7 @@
             android:id="@+id/tool_a14"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_14" />
 
@@ -366,7 +381,7 @@
             android:id="@+id/tool_a15"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_15" />
 
@@ -391,7 +406,7 @@
             android:id="@+id/tool_a16"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_16" />
 
@@ -416,7 +431,7 @@
             android:id="@+id/tool_a17"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_17" />
 
@@ -429,7 +444,7 @@
                 <TextView
                     android:id="@+id/homeToNextTitle_A17"
                     style="@style/homeListToolBarSmallText"
-                    android:text="ImageView" />
+                    android:text="androidx.appcompat.widget.AppCompatImageView" />
             </LinearLayout>
 
             <Button
@@ -441,7 +456,7 @@
             android:id="@+id/tool_a18"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_18" />
 
@@ -466,7 +481,7 @@
             android:id="@+id/tool_a19"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_19" />
 
@@ -489,10 +504,10 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_a20"
-            android:layout_marginBottom="@dimen/homeBottomHeight"
-            style="@style/homeListToolBar">
+            style="@style/homeListToolBar"
+            android:layout_marginBottom="@dimen/homeBottomHeight">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_20" />
 

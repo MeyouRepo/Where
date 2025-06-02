@@ -8,15 +8,14 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_b1"
-            android:layout_marginTop="@dimen/homeTopToolBarHeight"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 app:srcCompat="@drawable/zzz_21" />
 
@@ -37,7 +36,7 @@
             android:id="@+id/tool_b2"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 app:srcCompat="@drawable/zzz_22" />
 
@@ -58,7 +57,7 @@
             android:id="@+id/tool_b3"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_23" />
 
@@ -79,7 +78,7 @@
             android:id="@+id/tool_b4"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_24" />
 
@@ -100,7 +99,7 @@
             android:id="@+id/tool_b5"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_25" />
 
@@ -121,7 +120,7 @@
             android:id="@+id/tool_b6"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_26" />
 
@@ -146,7 +145,7 @@
          <androidx.appcompat.widget.Toolbar
              android:id="@+id/tool_b7"
              style="@style/homeListToolBar">
-             <ImageView
+             <androidx.appcompat.widget.AppCompatImageView
                  style="@style/homeListLeftIcon"
                  android:src="@drawable/zzz_27" />
              <LinearLayout
@@ -171,7 +170,7 @@
              android:id="@+id/tool_b8"
              android:visibility="gone"
              style="@style/homeListToolBar">
-             <ImageView
+             <androidx.appcompat.widget.AppCompatImageView
                  style="@style/homeListLeftIcon"
                  android:src="@drawable/getwifilist" />
              <LinearLayout
@@ -190,7 +189,7 @@
             android:id="@+id/tool_b9"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_29" />
 
@@ -211,7 +210,7 @@
             android:id="@+id/tool_b10"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_30" />
 
@@ -233,7 +232,7 @@
             android:layout_marginBottom="@dimen/homeBottomHeight"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_31" />
 

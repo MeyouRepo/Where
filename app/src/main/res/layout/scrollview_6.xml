@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView_6"
-    style="@style/homeMainScrollview"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    style="@style/homeMainScrollview">
 
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_f1"
-            android:layout_marginTop="@dimen/homeTopToolBarHeight"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 app:srcCompat="@drawable/zzz_64" />
 
@@ -41,7 +40,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_f2"
             style="@style/homeListToolBar">
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 app:srcCompat="@drawable/zzz_65" />
             <LinearLayout
@@ -58,7 +57,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_f3"
             style="@style/homeListToolBar">
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_66" />
             <LinearLayout
@@ -75,7 +74,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_f4"
             style="@style/homeListToolBar">
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_67" />
             <LinearLayout
@@ -92,7 +91,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_f5"
             style="@style/homeListToolBar">
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_68" />
             <LinearLayout
@@ -113,7 +112,7 @@
             android:id="@+id/tool_f6"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_69" />
 
@@ -134,7 +133,7 @@
             android:id="@+id/tool_f7"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_70" />
 
@@ -155,7 +154,7 @@
             android:id="@+id/tool_f8"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_71" />
 
@@ -176,7 +175,7 @@
             android:id="@+id/tool_f9"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_72" />
 
@@ -197,7 +196,7 @@
             android:id="@+id/tool_f10"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_73" />
 
@@ -216,10 +215,10 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_f11"
-            android:layout_marginBottom="@dimen/homeBottomHeight"
-            style="@style/homeListToolBar">
+            style="@style/homeListToolBar"
+            android:layout_marginBottom="@dimen/homeBottomHeight">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_74" />
 

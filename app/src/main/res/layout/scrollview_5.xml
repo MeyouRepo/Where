@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView_5"
-    style="@style/homeMainScrollview"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    style="@style/homeMainScrollview">
 
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_e1"
-            android:layout_marginTop="@dimen/homeTopToolBarHeight"
             style="@style/homeListToolBar">
 
-
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 app:srcCompat="@drawable/zzz_54" />
 
@@ -41,7 +39,7 @@
             android:id="@+id/tool_e2"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 app:srcCompat="@drawable/zzz_55" />
 
@@ -66,7 +64,7 @@
             android:id="@+id/tool_e3"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_56" />
 
@@ -92,7 +90,7 @@
             android:id="@+id/tool_e4"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_57" />
 
@@ -117,7 +115,7 @@
             android:id="@+id/tool_e5"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_58" />
 
@@ -142,7 +140,7 @@
             android:id="@+id/tool_e6"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_59" />
 
@@ -167,7 +165,7 @@
             android:id="@+id/tool_e7"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_60" />
 
@@ -192,7 +190,7 @@
             android:id="@+id/tool_e8"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_61" />
 
@@ -217,7 +215,7 @@
             android:id="@+id/tool_e9"
             style="@style/homeListToolBar">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_62" />
 
@@ -240,10 +238,10 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_e10"
-            android:layout_marginBottom="@dimen/homeBottomHeight"
-            style="@style/homeListToolBar">
+            style="@style/homeListToolBar"
+            android:layout_marginBottom="@dimen/homeBottomHeight">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 style="@style/homeListLeftIcon"
                 android:src="@drawable/zzz_63" />
 
