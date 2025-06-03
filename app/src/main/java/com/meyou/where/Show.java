@@ -63,6 +63,7 @@ import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -494,12 +495,17 @@ public class Show extends Common implements MyInterface {
         break;
       case 35:
         WebView webView = findViewById(R.id.WebView_On_WebViewExample);
+        RelativeLayout.LayoutParams webViewLayoutParams =
+            (RelativeLayout.LayoutParams) webView.getLayoutParams();
+        int statusBarHeight = getStatusBarHeight();
+        webViewLayoutParams.setMarginStart(statusBarHeight);
+        webViewLayoutParams.setMarginEnd(statusBarHeight);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
-        webView.loadUrl("http://www.dgtle.com");
+        webView.loadUrl("http://where.lcjuves.com");
         break;
       case 36:
         final ArrayAdapter<String> arrayAdapter =
@@ -640,9 +646,6 @@ public class Show extends Common implements MyInterface {
             .setTextColor(getLoadColor());
         break;
       case 49:
-        findViewById(R.id.codeTopLine)
-            .setPadding(dpToPixels(10), dpToPixels(5), dpToPixels(10), dpToPixels(5));
-        findViewById(R.id.codeTopLine).setBackgroundColor(Color.argb(200, 255, 255, 255));
         setViewRadius(12, R.id.codeTopLine);
         findViewById(R.id.RelativeLayout_On_InterFragmentCommunicationExample)
             .setBackgroundColor(Color.RED);

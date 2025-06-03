@@ -3,6 +3,8 @@ package com.meyou.where.Next;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.meyou.where.R;
 import com.meyou.where.What;
 
@@ -1228,21 +1230,21 @@ public class Two extends What {
     if (getLoadValue() >= 9) {
       for (int i = 0; i < 4; i++) {
         findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-        ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+        ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
             .setText(getStringArray(R.array.nextTwoTopRightTextViewRightLoad)[i]);
       }
 
     } else {
       for (int i = 0; i < 2; i++) {
         findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-        ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+        ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
             .setText(getStringArray(R.array.nextTwoTopRightTextViewRightLoad)[i]);
       }
     }
 
     for (int i = 1; i <= 4; i++) {
       if (v.getId() == getId(SCROLLVIEW_BUTTON_NAME_ + i)) {
-        ((Button) findViewById(R.id.nextTopRightButton))
+        ((TextView) findViewById(R.id.nextTopRightButton))
             .setText(getStringArray(R.array.nextTwoTopRightTextViewRightLoad)[i - 1]);
         topRightHide();
 

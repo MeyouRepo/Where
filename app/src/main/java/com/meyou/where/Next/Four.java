@@ -3,6 +3,8 @@ package com.meyou.where.Next;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.meyou.where.R;
 import com.meyou.where.What;
 
@@ -409,26 +411,26 @@ public class Four extends What {
 
       for (int i = 0; i < 2; i++) {
         findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-        ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+        ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
             .setText(getStringArray(R.array.nextFourTopRightTextViewRightLoad)[i]);
       }
     } else if (getLoadValue() == 4) {
       for (int i = 0; i < 7; i++) {
         findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-        ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+        ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
             .setText(getStringArray(R.array.nextFourTopRightTextViewRightLoad2)[i]);
       }
 
     } else if (getLoadValue() == 7) {
       for (int i = 0; i < 3; i++) {
         findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-        ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+        ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
             .setText(getStringArray(R.array.nextFourTopRightTextViewRightLoad3)[i]);
       }
     } else {
       for (int i = 0; i < 4; i++) {
         findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-        ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+        ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
             .setText(getStringArray(R.array.nextFourTopRightTextViewRightLoad)[i]);
       }
     }
@@ -437,10 +439,10 @@ public class Four extends What {
       if (v.getId() == getId(SCROLLVIEW_BUTTON_NAME_ + i)) {
         topRightHide();
         if (getLoadValue() != 4) {
-          ((Button) findViewById(R.id.nextTopRightButton))
+          ((TextView) findViewById(R.id.nextTopRightButton))
               .setText(getStringArray(R.array.nextFourTopRightTextViewRightLoad)[i - 1]);
         } else {
-          ((Button) findViewById(R.id.nextTopRightButton))
+          ((TextView) findViewById(R.id.nextTopRightButton))
               .setText(getStringArray(R.array.nextFourTopRightTextViewRightLoad2)[i - 1]);
         }
 

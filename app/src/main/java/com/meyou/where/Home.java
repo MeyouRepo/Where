@@ -140,8 +140,7 @@ public class Home extends Focus implements FunTouchListener {
                   (FrameLayout.LayoutParams) view.getLayoutParams();
               View homeTopToolbar = getDecorView().findViewById(R.id.home_top_toolbar);
               int homeTopToolbarHeight = homeTopToolbar.getMeasuredHeight();
-              layoutParams.setMargins(0, homeTopToolbarHeight, 0, 0);
-              view.setLayoutParams(layoutParams);
+              view.setPadding(0, homeTopToolbarHeight, 0, 0);
             });
 
     if (checkAnimation) {

@@ -9,7 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 import com.meyou.Focus;
 import com.meyou.FunTouchListener;
 import com.meyou.Me;
@@ -62,8 +62,8 @@ public abstract class Common extends Focus {
 
   protected final void moreTouch(int leftId, int rightId) {
 
-    Button left = findViewById(leftId);
-    Button right = findViewById(rightId);
+    TextView left = findViewById(leftId);
+    TextView right = findViewById(rightId);
 
     left.setBackgroundColor(getLoadColor());
     left.setTextColor(Color.WHITE);
@@ -77,13 +77,13 @@ public abstract class Common extends Focus {
           @Override
           public void onActionDown(View v, MotionEvent event) {
             v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
-            ((Button) v).setTextColor(Color.BLACK);
+            ((TextView) v).setTextColor(Color.BLACK);
           }
 
           @Override
           public void onActionUp(View v, MotionEvent event) {
             v.setBackgroundColor(getLoadColor());
-            ((Button) v).setTextColor(Color.WHITE);
+            ((TextView) v).setTextColor(Color.WHITE);
           }
 
           @Override
@@ -98,13 +98,13 @@ public abstract class Common extends Focus {
           @Override
           public void onActionDown(View v, MotionEvent event) {
             v.setBackgroundColor(getLoadColor());
-            ((Button) v).setTextColor(Color.WHITE);
+            ((TextView) v).setTextColor(Color.WHITE);
           }
 
           @Override
           public void onActionUp(View v, MotionEvent event) {
             v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
-            ((Button) v).setTextColor(Color.BLACK);
+            ((TextView) v).setTextColor(Color.BLACK);
           }
 
           @Override
@@ -116,7 +116,7 @@ public abstract class Common extends Focus {
 
   protected final void oneTouch(int buttonId) {
 
-    final Button button = findViewById(buttonId);
+    final TextView button = findViewById(buttonId);
 
     button.setBackgroundColor(getLoadColor());
     button.setTextColor(Color.WHITE);
@@ -128,13 +128,13 @@ public abstract class Common extends Focus {
           @Override
           public void onActionDown(View v, MotionEvent event) {
             v.setBackgroundColor(COLOR_GRAY_TOUCH_DOWN);
-            ((Button) v).setTextColor(Color.BLACK);
+            ((TextView) v).setTextColor(Color.BLACK);
           }
 
           @Override
           public void onActionUp(View v, MotionEvent event) {
             v.setBackgroundColor(getLoadColor());
-            ((Button) v).setTextColor(Color.WHITE);
+            ((TextView) v).setTextColor(Color.WHITE);
           }
 
           @Override

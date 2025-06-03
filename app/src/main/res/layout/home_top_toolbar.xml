@@ -20,31 +20,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/android_studio_stable" />
 
-    <androidx.appcompat.widget.Toolbar
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/homeTopToolBarRight"
         android:layout_width="0dp"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:background="@drawable/home_top_toolbar_right_drawable"
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageButton"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@id/imageButton">
 
         <TextView
             android:id="@+id/homeTopRightToolBarTextView"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingTop="4.3dp"
+            android:paddingBottom="4.3dp"
             android:textColor="@android:color/white"
             android:textSize="20dp"
             android:textStyle="bold"
-            tools:ignore="SpUsage" />
-    </androidx.appcompat.widget.Toolbar>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry,SpUsage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

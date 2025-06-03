@@ -3,6 +3,7 @@ package com.meyou.where.Next;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import com.meyou.where.R;
 import com.meyou.where.What;
 
@@ -1288,19 +1289,19 @@ public class Three extends What {
       if (getLoadValue() == 11) {
         for (int i = 0; i < 3; i++) {
           findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-          ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+          ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
               .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad3)[i]);
         }
       } else if (getLoadValue() == 6) {
         for (int i = 0; i < 3; i++) {
           findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-          ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+          ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
               .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad2)[i]);
         }
       } else {
         for (int i = 0; i < 2; i++) {
           findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-          ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+          ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
               .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad)[i]);
         }
       }
@@ -1309,10 +1310,10 @@ public class Three extends What {
       for (int i = 0; i < 4; i++) {
         findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
         if (getLoadValue() == 2) {
-          ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+          ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
               .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad)[i]);
         } else {
-          ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+          ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
               .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad4)[i]);
         }
       }
@@ -1321,14 +1322,14 @@ public class Three extends What {
     for (int i = 1; i <= 4; i++) {
       if (v.getId() == getId(SCROLLVIEW_BUTTON_NAME_ + i)) {
         topRightHide();
-        ((Button) findViewById(R.id.nextTopRightButton))
+        ((TextView) findViewById(R.id.nextTopRightButton))
             .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad)[i - 1]);
 
         if (i == 1) mainActivityJava(getLoadValue());
         if (i == 2) xml(getLoadValue());
         if (i == 3) {
           if (getLoadValue() == 11) {
-            ((Button) findViewById(R.id.nextTopRightButton))
+            ((TextView) findViewById(R.id.nextTopRightButton))
                 .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad3)[i - 1]);
             codeLoad(
                 "<menu xmlns:android=\"http://schemas.android.com/apk/res/android\">\n"
@@ -1350,7 +1351,7 @@ public class Three extends What {
                     + "\n"
                     + "</menu>");
           } else if (getLoadValue() == 6) {
-            ((Button) findViewById(R.id.nextTopRightButton))
+            ((TextView) findViewById(R.id.nextTopRightButton))
                 .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad2)[i - 1]);
             codeLoad(
                 "<menu xmlns:android=\"http://schemas.android.com/apk/res/android\">\n"
@@ -1383,7 +1384,7 @@ public class Three extends What {
                     + "\n"
                     + "</RelativeLayout>");
           } else {
-            ((Button) findViewById(R.id.nextTopRightButton))
+            ((TextView) findViewById(R.id.nextTopRightButton))
                 .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad4)[i - 1]);
             codeLoad(
                 "<RelativeLayout\n"
@@ -1417,7 +1418,7 @@ public class Three extends What {
                     + "\n"
                     + "</RelativeLayout>");
           } else {
-            ((Button) findViewById(R.id.nextTopRightButton))
+            ((TextView) findViewById(R.id.nextTopRightButton))
                 .setText(getStringArray(R.array.nextThreeTopRightTextViewRightLoad4)[i - 1]);
             codeLoad(
                 "<menu xmlns:android=\"http://schemas.android.com/apk/res/android\">\n"

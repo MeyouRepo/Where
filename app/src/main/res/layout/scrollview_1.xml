@@ -444,7 +444,7 @@
                 <TextView
                     android:id="@+id/homeToNextTitle_A17"
                     style="@style/homeListToolBarSmallText"
-                    android:text="androidx.appcompat.widget.AppCompatImageView" />
+                    android:text="ImageView" />
             </LinearLayout>
 
             <Button

@@ -7,9 +7,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import androidx.core.content.ContextCompat;
 import com.meyou.Focus;
 import com.meyou.UIState;
 import com.meyou.where.Next.Five;
@@ -126,11 +126,12 @@ public class What extends Focus implements View.OnClickListener, View.OnTouchLis
     if (v.getId() == R.id.nextTopRightButton) {
       if (event.getAction() == MotionEvent.ACTION_DOWN) {
         findViewById(R.id.nextTopRightButton).setBackgroundColor(Color.parseColor("#e0e0e0"));
-        ((Button) findViewById(R.id.nextTopRightButton))
-            .setTextColor(getColor(R.color.nextColorAccent));
+        ((TextView) findViewById(R.id.nextTopRightButton))
+            .setTextColor(ContextCompat.getColor(this, R.color.nextColorAccent));
       } else if (event.getAction() == MotionEvent.ACTION_UP) {
-        findViewById(R.id.nextTopRightButton).setBackgroundColor(getColor(R.color.nextColorAccent));
-        ((Button) findViewById(R.id.nextTopRightButton)).setTextColor(Color.WHITE);
+        findViewById(R.id.nextTopRightButton)
+            .setBackgroundColor(ContextCompat.getColor(this, R.color.nextColorAccent));
+        ((TextView) findViewById(R.id.nextTopRightButton)).setTextColor(Color.WHITE);
       }
     }
     return false;

@@ -7,7 +7,7 @@
 
     <style name="Theme.Where" parent="Base.Theme.Where" />
 
-    <style name="appTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="appTheme" parent="Theme.Where">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -106,7 +106,7 @@
     </style>
 
 
-    <style name="homeListNextButton" parent="Widget.AppCompat.Button.Borderless">
+    <style name="homeListNextButton">
         <item name="android:layout_height">@dimen/homeMainNextButtonSize</item>
         <item name="android:layout_width">@dimen/homeMainNextButtonSize</item>
         <item name="android:layout_gravity">center_vertical|right</item>
@@ -120,7 +120,7 @@
         <item name="android:layout_marginLeft">@dimen/homeListIconLeftEdge</item>
     </style>
 
-    <style name="nextScrollViewTopRightButton" parent="Widget.AppCompat.Button.Borderless">
+    <style name="nextScrollViewTopRightButton">
         <item name="android:textAllCaps">false</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
@@ -137,7 +137,7 @@
     </style>
 
 
-    <style name="showingMoreTouchStyle" parent="Widget.AppCompat.Button.Borderless">
+    <style name="showingMoreTouchStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">19dp</item>

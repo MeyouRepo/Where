@@ -2,7 +2,7 @@ package com.meyou.where.Next;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 import com.meyou.where.R;
 import com.meyou.where.What;
 
@@ -491,14 +491,14 @@ public class Seven extends What {
 
     for (int i = 0; i < 2; i++) {
       findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))).setVisibility(View.VISIBLE);
-      ((Button) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
+      ((TextView) findViewById(getId(SCROLLVIEW_BUTTON_NAME_ + (i + 1))))
           .setText(getStringArray(R.array.nextFourTopRightTextViewRightLoad)[i]);
     }
 
     for (int i = 1; i <= 2; i++) {
       if (v.getId() == getId(SCROLLVIEW_BUTTON_NAME_ + i)) {
         topRightHide();
-        ((Button) findViewById(R.id.nextTopRightButton))
+        ((TextView) findViewById(R.id.nextTopRightButton))
             .setText(getStringArray(R.array.nextFourTopRightTextViewRightLoad)[i - 1]);
         if (i == 1) mainActivityJava(getLoadValue());
         if (i == 2) xml(getLoadValue());
