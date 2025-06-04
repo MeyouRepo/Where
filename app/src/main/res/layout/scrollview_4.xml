@@ -27,7 +27,7 @@
                     android:text="活动的生命周期" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_46"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -48,7 +48,7 @@
                     android:text="碎片的生命周期" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_47"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -72,7 +72,7 @@
                     style="@style/homeListToolBarSimpleText"
                     android:text="碎片与活动结合\n的生命周期" />
             </LinearLayout>
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_48"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -95,7 +95,7 @@
                     android:text="碎片与活动进行通信" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_49"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -116,7 +116,7 @@
                     android:text="列表视图碎片化" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_50"
                 style="@style/homeListNextButton" />
 
@@ -141,7 +141,7 @@
                      style="@style/homeListToolBarSimpleText"
                      android:text="对话框碎片化" />
              </LinearLayout>
-             <Button
+             <androidx.appcompat.widget.AppCompatImageButton
                  android:id="@+id/show_code_51"
                  style="@style/homeListNextButton" />
 
@@ -165,7 +165,7 @@
                     android:text="服务的使用" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_52"
                 style="@style/homeListNextButton" />
 
@@ -191,7 +191,7 @@
                     style="@style/homeListToolBarSimpleText"
                     android:text="服务的启停" />
             </LinearLayout>
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_53"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>

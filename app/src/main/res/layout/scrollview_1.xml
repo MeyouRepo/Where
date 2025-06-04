@@ -30,7 +30,7 @@
                     android:text="TextView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_1"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -57,7 +57,7 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_2"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -84,7 +84,7 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_3"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -111,7 +111,7 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_4"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -138,7 +138,7 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_5"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -165,7 +165,7 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_6"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -192,7 +192,7 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_7"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -219,7 +219,7 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_8"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -246,7 +246,7 @@
                     tools:ignore="HardcodedText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_9"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -272,7 +272,7 @@
                     android:text="Spinner" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_10"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -297,7 +297,7 @@
                     android:text="AutoCompleteTextView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_11"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -322,7 +322,7 @@
                     android:text="CheckedTextView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_12"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -347,7 +347,7 @@
                     android:text="TextSwitcher" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_13"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -372,7 +372,7 @@
                     android:text="ImageSwitcher" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_14"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -397,7 +397,7 @@
                     android:text="AdapterViewFlipper" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_15"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -422,7 +422,7 @@
                     android:text="ImageButton" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_16"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -447,7 +447,7 @@
                     android:text="ImageView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_17"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -472,7 +472,7 @@
                     android:text="VideoView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_18"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -497,7 +497,7 @@
                     android:text="TextClock" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_19"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -523,7 +523,7 @@
                     android:text="Chronometer" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_20"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>

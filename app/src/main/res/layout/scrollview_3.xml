@@ -31,7 +31,7 @@
                     android:text="ListView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_32"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -56,7 +56,7 @@
                     android:text="ExpandableListView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_33"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -81,7 +81,7 @@
                     android:text="GridView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_34"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -106,7 +106,7 @@
                     android:text="WebView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_35"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -131,7 +131,7 @@
                     android:text="SearchView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_36"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -156,7 +156,7 @@
                     android:text="PopUpMenu" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_37"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -181,7 +181,7 @@
                     android:text="DatePicker" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_38"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -206,7 +206,7 @@
                     android:text="TimePicker" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_39"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -231,7 +231,7 @@
                     android:text="TextInputEditText" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_40"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -256,7 +256,7 @@
                     android:text="FloatingActionButton" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_41"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -281,7 +281,7 @@
                     android:text="BottomNavigationView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_42"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -306,7 +306,7 @@
                     android:text="NavigationView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_43"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -331,7 +331,7 @@
                     android:text="ScrollView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_44"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -357,7 +357,7 @@
                     android:text="NestedScrollView" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_45"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>

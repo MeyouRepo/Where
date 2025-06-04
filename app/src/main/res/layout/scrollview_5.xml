@@ -30,7 +30,7 @@
                     android:text="Fade Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_54"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -55,7 +55,7 @@
                     android:text="Zoom Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_55"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -80,7 +80,7 @@
                     android:text="Rotate Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_56"
                 style="@style/homeListNextButton" />
 
@@ -106,7 +106,7 @@
                     android:text="Translate Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_57"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -131,7 +131,7 @@
                     android:text="Slide Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_58"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -156,7 +156,7 @@
                     android:text="Bounce Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_59"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -181,7 +181,7 @@
                     android:text="Blink Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_60"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -206,7 +206,7 @@
                     android:text="Scale Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_61"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -231,7 +231,7 @@
                     android:text="Sequential Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_62"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -257,7 +257,7 @@
                     android:text="Together Animation" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_63"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>

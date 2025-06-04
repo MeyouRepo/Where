@@ -27,7 +27,7 @@
                     android:text="普通通知" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_75"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -48,7 +48,7 @@
                     android:text="收件箱样式通知" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_76"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -69,7 +69,7 @@
                     android:text="大文字样式通知" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_77"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -90,7 +90,7 @@
                     android:text="大图片样式通知" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_78"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -111,7 +111,7 @@
                     android:text="可交互提示" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_79"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
@@ -133,7 +133,7 @@
                     android:text="弹出提示框" />
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/show_code_80"
                 style="@style/homeListNextButton" />
         </androidx.appcompat.widget.Toolbar>
