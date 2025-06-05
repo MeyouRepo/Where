@@ -24,7 +24,9 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew assembleRelease
+        run: |
+          cp -f gradle/wrapper/gradle-wrapper-ci.properties gradle/wrapper/gradle-wrapper.properties
+          ./gradlew assembleRelease
         
       - name: Sign APK
         run: |
