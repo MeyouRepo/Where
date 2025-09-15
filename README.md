@@ -8,4 +8,4 @@
 
 ### If you like this project very much from the bottom of your heart, you can use Alipay to scan the following QR code to donate to the author:
 
-<img src="./Alipay.svg" height="220">
+<picture><source media="(prefers-color-scheme: dark)" srcset="./AlipayDark.svg"><source media="(prefers-color-scheme: light)" srcset="./Alipay.svg"><img src="./Alipay.svg" height="220"></picture>
